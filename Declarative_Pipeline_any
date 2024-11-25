@@ -1,0 +1,11 @@
+Pipeline{
+  Agent any
+  stages{
+    stage('Build'){
+      sh echo "this is stage1"
+    }
+    stage('develop'){
+      sh echo "this is stage2"
+      sh sleep 10
+    }
+}
