@@ -1,14 +1,20 @@
-pipeline{
-  agent any
-  stages{
-    stage('Build'){
-        steps{
-            sh 'echo "this is stage1"'
-          }
-    }
-    stage('develop'){
-        steps{
-          sh 'echo "this is stage2"'
-          sh 'sleep 10'
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+                sh 'echo "building"
+            }
+        }
+        stage('Test') { 
+            steps {
+                // 
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                // 
+            }
+        }
     }
 }
