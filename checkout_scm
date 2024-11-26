@@ -1,0 +1,34 @@
+
+pipeline {
+  agent any
+  environment {
+      url = 'https://github.com/Deepika-2998/jenkinsfile.git'
+      branch = 'main'
+      CRED_ID = 'github_devpos-oct-toke'
+  }
+  stages {
+    stage('checkout') {
+      steps {
+          script {
+            git url: "${env.url}",
+            branch: "${env.branch}",
+            credentialsId: "${env.CRED_ID}"
+        }
+      }
+      }
+  stage ('check checkout') {
+     steps {
+        sh 'ls -lrt'
+            
+  }
+stage ('scm checkout') {
+  steps {
+    script {
+      checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github_devpos-oct-toke', url: 'https://github.com/Deepika-2998/jenkinsfile.git']])
+    }
+    }
+  }
+
+}
+}
+}
