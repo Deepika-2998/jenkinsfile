@@ -21,6 +21,7 @@ pipeline {
         sh 'ls -lrt'
             
   }
+}
 stage ('scm checkout') {
   steps {
     script {
@@ -31,4 +32,4 @@ stage ('scm checkout') {
 
 }
 }
-}
+
