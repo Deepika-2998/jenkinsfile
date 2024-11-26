@@ -4,14 +4,14 @@ pipeline {
   environment {
       url = 'https://github.com/Deepika-2998/jenkinsfile.git'
       branch = 'main'
-      credentialsIds = 'github_devpos-oct-toke'
+      CRED_ID = 'github_devpos-oct-toke'
   }
   stages {
     stage('checkout') {
       steps {
             git url: "${env.url}",
             branch: "${env.branch}",
-            credientalsId: "${env.credentialsIds}"
+            credentialsId: "${env.CRED_ID}"
         }
       }
   }
