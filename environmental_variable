@@ -3,14 +3,16 @@ pipline{
   environment{
       url="https://github.com/Deepika-2998/jenkinsfile.git"
       branch="main"
-      credentialsId="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"
+      credentialsId="github_devpos-oct-toke"
   }
   stages{
     stage('build'){
         script{
+            git ( 
             url: "${env.url}"
-            git branch: "${env.branch}"
+            branch: "${env.branch}"
             credientalsid: "${env.credentialsId}"
+            )
             }
       }
   }
