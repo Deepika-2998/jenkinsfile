@@ -7,11 +7,14 @@ pipline{
   }
   stages{
     stage('build'){
+      steps{
         script{
-            git url: "${env.url}"
-            branch: "${env.branch}"
+          
+            git url: "${env.url}",
+            branch: "${env.branch}",
             credientalsid: "${env.credentialsId}"
             }
+        }
       }
   }
 }
