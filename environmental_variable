@@ -8,11 +8,9 @@ pipline{
   stages{
     stage('build'){
         script{
-            git ( 
-            url: "${env.url}"
+            git url: "${env.url}"
             branch: "${env.branch}"
             credientalsid: "${env.credentialsId}"
-            )
             }
       }
   }
