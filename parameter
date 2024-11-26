@@ -2,17 +2,14 @@ pipeline {
 agent any
 parameters {
   booleanParam description: 'env_traget', name: 'run-project'
-  choice choices: ['choice 1', 'choice 2'], name: 'choice'
-  string defaultValue: 'true', name: 'stringparameters', trim: true
+  
 }
-
 
 stages {
   stage ('stage1') {
     steps {
       echo "BOOLEAN: ${params.run-project}"
-      echo "STRING: ${params.choice}"
-      echo "CHOICE: ${params.stringparameters}"
+      
     }
   }
 }
