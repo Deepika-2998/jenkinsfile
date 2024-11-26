@@ -7,6 +7,8 @@ pipeline {
       CRED_ID = 'github_devpos-oct-toke'
   }
   stages {
+stage ("parallel testing") {
+parallel {
     stage('checkout') {
       steps {
           script {
@@ -16,12 +18,6 @@ pipeline {
         }
       }
       }
-  stage ('check checkout') {
-     steps {
-        sh 'ls -lrt'
-            
-  }
-}
 stage ('scm checkout') {
   steps {
     script {
@@ -29,6 +25,15 @@ stage ('scm checkout') {
     }
     }
   }
+}
+}
+  stage ('check checkout') {
+     steps {
+        sh 'ls -lrt'
+            
+  }
+}
+
 
 }
 }
