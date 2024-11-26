@@ -1,7 +1,7 @@
 pipeline {
 agent any
 parameters {
-  booleanParam description: 'env_traget', name: 'run-project'
+  booleanParam(description: 'env_traget', name: 'run-project')
   
 }
 
