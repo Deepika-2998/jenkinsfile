@@ -4,10 +4,11 @@ pipeline {
         booleanParam(name: 'run_project', defaultValue: true, description: 'Whether to run the project or not')
     }
     stages {
-        stage('stage1') {
+        stage ('stage1') {
             steps {
                 echo "BOOLEAN: ${params.run_project}"
             }
         }
     }
-}
+} 
+
