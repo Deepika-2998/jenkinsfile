@@ -16,7 +16,7 @@ pipeline {
         }
       }
       }
-  stage ('checkout') {
+  stage ('check checkout') {
      steps {
         sh '''
             ls -lrt
