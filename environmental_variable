@@ -16,3 +16,20 @@ pipeline {
         }
     }
 }
+pipline{
+  agent any
+  environment{
+      url = 'https://github.com/Deepika-2998/jenkinsfile.git'
+      branch = 'main'
+      credentialsId = 'github_devpos-oct-toke'
+  }
+  stages{
+    stage('checkout'){
+      steps{
+            git url: "${env.url}",
+            branch: "${env.branch}",
+            credientalsid: "${env.credentialsId}"
+        }
+      }
+  }
+}
