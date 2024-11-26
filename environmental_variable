@@ -4,6 +4,7 @@ pipline{
       GIT_URL="https://github.com/Deepika-2998/jenkinsfile.git"
       GIT_BRANCH="main"
       GIT_CREDENTIALS=""
+  }
   stages{
     stage('build'){
         script{
@@ -13,3 +14,4 @@ pipline{
             }
       }
   }
+}
