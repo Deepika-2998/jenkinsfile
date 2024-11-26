@@ -1,6 +1,6 @@
 pipline{
   agent any
-  enironment{
+  environment{
       url="https://github.com/Deepika-2998/jenkinsfile.git"
       branch="main"
       credentialsId="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"
