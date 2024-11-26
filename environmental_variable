@@ -1,20 +1,18 @@
-pipline{
-  agent any
-  environment{
-      url="https://github.com/Deepika-2998/jenkinsfile.git"
-      branch="main"
-      credentialsId="github_devpos-oct-toke"
-  }
-  stages{
-    stage('build'){
-      steps{
-        script{
-          
-            git url: "${env.url}",
-            branch: "${env.branch}",
-            credientalsid: "${env.credentialsId}"
+pipeline {
+    agent any
+    environment {
+        BRANCH = 'main'
+        GIT_URL = 'https://github.com/harshaprakash100/ip_app.git'
+        CRED_ID = 'github_hp'
+    }
+
+    stages {
+        stage('checkout') {
+            steps {
+                  git branch: "${env.BRANCH}",
+                    credentialsId: "${env.CRED_ID}",
+                    url: "${env.GIT_URL}"
             }
         }
-      }
-  }
+    }
 }
