@@ -1,16 +1,16 @@
 pipline{
   agent any
-  enironmental{
-      GIT_URL="https://github.com/Deepika-2998/jenkinsfile.git"
-      GIT_BRANCH="./main"
-      GIT_CREDENTIALS="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"
+  enironment{
+      url="https://github.com/Deepika-2998/jenkinsfile.git"
+      branch="main"
+      credentialsId="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"
   }
   stages{
     stage('build'){
         script{
-            url: "${GIT_URL}"
-            git branch: "${GIT_BRANCH}"
-            credientalsid: "${GIT_CREDENTIALS}"
+            url: "${env.url}"
+            git branch: "${env.branch}"
+            credientalsid: "${env.credentialsId}"
             }
       }
   }
