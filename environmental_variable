@@ -2,8 +2,8 @@ pipeline {
     agent any
     environment {
         BRANCH = 'main'
-        GIT_URL = 'https://github.com/harshaprakash100/ip_app.git'
-        CRED_ID = 'github_hp'
+        GIT_URL = 'https://github.com/Deepika-2998/jenkinsfile.git'
+        CRED_ID = 'github_devpos-oct-toke'
     }
 
     stages {
