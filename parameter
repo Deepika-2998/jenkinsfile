@@ -1,13 +1,13 @@
 pipeline {
-  agent any
-  parameters {
-    booleanParam(name: 'run-project', description: 'Whether to run the project or not', defaultValue: true)
-  }
-  stages {
-    stage ('stage1') {
-      steps {
-        echo "BOOLEAN: ${params.run-project}"
-      }
+    agent any
+    parameters {
+        booleanParam(name: 'run_project', defaultValue: true, description: 'Whether to run the project or not')
     }
-  }
+    stages {
+        stage('stage1') {
+            steps {
+                echo "BOOLEAN: ${params.run_project}"
+            }
+        }
+    }
 }
