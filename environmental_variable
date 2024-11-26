@@ -18,10 +18,10 @@ pipeline {
       }
   stage ('checkout') {
      steps {
-        sh '
+        sh '''
             ls -lrt
             echo "${env.url}"
-        '
+        '''
   }
 }
 }
