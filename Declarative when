@@ -21,8 +21,7 @@ stages {
   stage ('deploy') {
     when {
       expression {
-        
-        params.CHOOSE='stage2'
+        params.CHOOSE == 'stage2'
       }
     }
     steps {
