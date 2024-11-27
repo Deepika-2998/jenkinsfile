@@ -3,9 +3,9 @@ pipeline {
   options {
     ansiColor('xterm')
     buildDiscarder(logRotator(numToKeepStr:'2'))
-    disableConcurrentBuilder(abortPrevious:true)
+    disableConcurrentBuilds(abortPrevious:true)
     retry(3)
-    timeout(time:1, unit: 'SECOUND')
+    timeout(time:1, unit: 'HOURS')
     timestamps()
   }
   stages {
