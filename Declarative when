@@ -1,13 +1,25 @@
 pipeline {
 agent any
+environment {
+  branch: 'main'
+  url: 'https://github.com/Deepika-2998/jenkinsfile.git'
+  id: 'github_devpos-oct-toke'
+}
 stages {
   stage ('build') {
+    steps {
+      script {
+        git url: "${env.url}",
+            branch: "${env.branch}",
+            credentialsId: "${env.id}"
+      }
+    }
     when {
       branch 'main'
     }
     steps {
       script {
-        
+        echo " HELLO"
       }
     }
   }
