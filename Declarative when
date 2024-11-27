@@ -21,6 +21,7 @@ stages {
   stage ('deploy') {
     when {
       expression {
+        env.GIT_BRANCH='origin/main'
         params.CHOOSE == 'stage2'
       }
     }
