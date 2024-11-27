@@ -1,1 +1,17 @@
+pipeline {
+  agent any
+  triggers {
+    cron('*/10 * * * *')
+    pollSCM('H */4 * * 1-4')
+  }
+stages {
+  stage('build') {
+    steps {
+      script {
+        echo "HELLO"
+    }
+  }
+}
+}
+}
 
