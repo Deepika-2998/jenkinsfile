@@ -4,3 +4,4 @@ pipeline {
     ansiColor('xterm')
     buildDiscarder(logRotator(numToKeepsStr:'5'))
   }
+}
