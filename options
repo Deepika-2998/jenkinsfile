@@ -5,13 +5,17 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr:'2'))
     disableConcurrentBuilds(abortPrevious:true)
     retry(3)
-    timeout(time:5, unit: 'SECOUNDS')
+    timeout(time:5, unit: 'SECONDS')
     timestamps()
   }
   stages {
     stage('build') {
       steps {
-        echo "hello"
+        scripts {
+          sh 'sleep 10'
+          echo "hello"
+        }
+
       }
     }
   }
