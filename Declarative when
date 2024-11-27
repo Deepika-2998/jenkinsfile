@@ -5,6 +5,9 @@ environment {
   url = 'https://github.com/Deepika-2998/jenkinsfile.git'
   id = 'github_devpos-oct-toke'
 }
+parameters {
+  choice choices: ['stage1', 'stage2'], name: 'CHOOSE'
+}
 stages {
   stage ('build') {
     steps {
@@ -18,7 +21,8 @@ stages {
   stage ('deploy') {
     when {
       expression {
-        env.GIT_BRANCH='origin/main'
+        //env.GIT_BRANCH='origin/main'
+        params.CHOOSE='stage2'
       }
     }
     steps {
