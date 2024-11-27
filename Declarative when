@@ -14,8 +14,16 @@ stages {
             credentialsId: "${env.id}"
       }
     }
+  }
+  stage ('deploy') {
     when {
       branch 'main'
+      expression {
+        env.GIT_BRANCH='origin/main'
+      }
+    }
+    steps {
+        echo "hello"
     }
   }
 }
