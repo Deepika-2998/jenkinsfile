@@ -3,6 +3,10 @@ pipeline {
   options {
     ansiColor('xterm')
     buildDiscarder(logRotator(numToKeepStr:'2'))
+    disableConcurrentBuilder(abortPrevious:true))
+    retry(3)
+    timeout(time:1, unit: 'SECOUND')
+    timestamps()
   }
   stages {
     stage('build') {
