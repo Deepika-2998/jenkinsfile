@@ -4,14 +4,25 @@ agent any
     stage('TEST') {
       steps {
         echo "hello"
+        sh ' sleep 4'
+        echo "this is test stage"
       }
     }
   }
   post {
     
-    aborted {
+   always {
+      echo "This will run always(success,failur,unstable) "
+      cleanWs()
+    }
+    failure {
       echo "This will run when build fails"
-      error "Exiting with failure code due to manual abort."
+    }
+    unstable {
+      echo "This will run when abort by user"
+    }
+    aborted {
+      echo "This will run when build is unstable"
     }
     
   }
