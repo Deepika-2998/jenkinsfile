@@ -12,7 +12,7 @@ stages {
   }
     steps {
       echo " nice to meet you"
-      //sh 'exit1'
+      sh 'exit1'
     }
   }
 }
