@@ -1,0 +1,24 @@
+pipeline {
+  stages {
+    stage('TEST') {
+      echo "hello"
+    }
+  }
+  post {
+    always {
+      echo "This will run always(success,failur,unstable) "
+      cleanWs()
+    }
+    failure {
+      sh 'exit'
+      echo "This will run when build fails"
+    }
+    unstable {
+      echo "This will run when abort by user"
+    }
+    aboarted {
+      echo "This will run when build is unstable"
+    }
+    
+  }
+}
