@@ -3,11 +3,14 @@ agent any
   stages {
     stage('TEST') {
       steps {
+        script {
         echo "hello"
         sh ' sleep 4'
         sh 'exit 1'
         echo "this is test stage"
         currentBuild.result="UNSTABLE"
+        
+      }
       }
     }
   }
