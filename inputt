@@ -6,9 +6,9 @@ stages {
     message "Should we continue?"
     ok "yes, we should"
     submitter "ablice,bob"
-    //parameters {
-     // string(name: 'PERSON' , defaultValue: 'Mr.Jenkins', description: 'Who Should I say hello to?')
-   // }
+    parameters {
+     string(name: 'PERSON' , defaultValue: 'Mr.Jenkins', description: 'Who Should I say hello to?')
+   }
   }
     steps {
       echo " nice to meet you"
