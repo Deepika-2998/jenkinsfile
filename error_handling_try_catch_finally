@@ -4,7 +4,7 @@ stages {
   stage('build') {
     steps {
       script {
-        catchError(buildResult: 'SUCCESS' , stageResult: 'FAILURE'){
+        catchError(buildResult: 'SUCCESS' , stageResult: 'SUCCESS'){
           sh 'exit 1'
           echo "This is stage2 of pipeine"
         }
