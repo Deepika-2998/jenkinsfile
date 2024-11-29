@@ -8,19 +8,10 @@ agent any
     }
   }
   post {
-    always {
-      echo "This will run always(success,failur,unstable) "
-      cleanWs()
-    }
+    
     failure {
       sh 'exit 1'
       echo "This will run when build fails"
-    }
-    unstable {
-      echo "This will run when abort by user"
-    }
-    aborted {
-      echo "This will run when build is unstable"
     }
     
   }
