@@ -20,10 +20,10 @@ agent any
       echo "This will run when build fails"
     }
     unstable {
-      echo "This will run when abort by user"
+      echo "This will run when build is unstable"
     }
     aborted {
-      echo "This will run when build is unstable"
+      echo "This will run when build aborted by user"
     }
     
   }
