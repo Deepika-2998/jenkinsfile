@@ -1,7 +1,9 @@
 pipeline {
   stages {
     stage('TEST') {
-      echo "hello"
+      steps {
+        echo "hello"
+      }
     }
   }
   post {
@@ -16,7 +18,7 @@ pipeline {
     unstable {
       echo "This will run when abort by user"
     }
-    aboarted {
+    aborted {
       echo "This will run when build is unstable"
     }
     
