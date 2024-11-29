@@ -9,7 +9,7 @@ agent any
   }
   post {
     
-    failure {
+    aborted {
       sleep 250
       echo "This will run when build fails"
     }
