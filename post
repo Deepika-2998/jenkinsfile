@@ -6,11 +6,19 @@ agent any
         script {
         echo "hello"
         sh ' sleep 4'
-        
         echo "this is test stage"
-        currentBuild.result = 'UNSTABLE'
-        
-      }
+        //currentBuild.result = 'UNSTABLE' //manually aborted by user in blue ocean to execute unstable block
+        //or
+        //sh 'exit 1'
+        //or
+        try {
+          sh 'exit 1'
+        } catch(Exception e) {
+          echo "Error occurred, but marking build as UNSTABLE"
+                        currentBuild.result = 'UNSTABLE'
+        }
+          
+        }
       }
     }
   }
