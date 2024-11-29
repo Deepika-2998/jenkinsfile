@@ -13,7 +13,7 @@ agent any
       cleanWs()
     }
     failure {
-      sh 'exit'
+      sh 'exit 1'
       echo "This will run when build fails"
     }
     unstable {
