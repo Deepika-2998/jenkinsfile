@@ -10,8 +10,8 @@ agent any
   post {
     
     aborted {
-      exit 1
       echo "This will run when build fails"
+      error "Exiting with failure code due to manual abort."
     }
     
   }
