@@ -10,7 +10,7 @@ agent any
   post {
     
     failure {
-      sh 'exit 1'
+      sleep 3
       echo "This will run when build fails"
     }
     
